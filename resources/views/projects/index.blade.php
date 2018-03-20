@@ -56,6 +56,7 @@
 			        	</td>
 			            <td class="table-title">
 			            	<a href="/projects/show/{{ $project->id }}"  class="text-navy">{{ $project->name }}</a>
+                                        
 			            	<br/>
 			            	<!--<small>{{ str_limit($project->description, 75) }}</small>-->
 			            </td>

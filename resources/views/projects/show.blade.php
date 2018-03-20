@@ -140,12 +140,20 @@
                         <dl class="dl-horizontal">
                             <dt>Created by:</dt> 
                         	<dd>
-                        		<a href="/users/show/{{ $project->created_by }}" class="text-navy">{{ $project->created_full_name }}</a>
-                        	</dd>
+                                @if(Auth::check() && Auth::user()->role != 'Test Participant')
+                                    <a href="/users/show/{{ $project->created_by }}" class="text-navy">{{ $project->created_full_name }}</a>
+                        	@else   
+                                <p >{{ $project->created_full_name }}</p>                       	
+                                @endif
+                                </dd>
                             <dt>Modified by:</dt>
                             <dd>
+                                 @if(Auth::check() && Auth::user()->role != 'Test Participant')
                         		<a href="/users/show/{{ $project->modified_by }}" class="text-navy">{{ $project->modified_full_name }}</a>
-                        	</dd>
+                        	@else
+                                	<p>{{ $project->modified_full_name }}</p>
+                        	@endif
+                            </dd>
                         </dl>
                     </div>
                     <div class="col-lg-6" id="cluster_info">
@@ -159,7 +167,8 @@
         </div>
         </div>
     </div>
-
+                
+        @if(Auth::check() && Auth::user()->role != 'Test Participant')
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="ibox float-e-margins">
@@ -207,7 +216,8 @@
 				</div>
 			</div>
 		</div>
-
+                @endif
+        @if(Auth::check() && Auth::user()->role != 'Test Participant')
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
@@ -252,7 +262,7 @@
                 </div>
             </div>
         </div>
-
+         @endif
     </div>
 
 @include('layouts.modals.participants')
