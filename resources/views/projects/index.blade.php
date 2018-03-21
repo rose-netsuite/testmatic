@@ -74,14 +74,17 @@
 			            <td class="center options-td">
 			            	@if(Auth::check() && Auth::user()->role != 'Test Participant')
 			            	@if($project->inactive == false)
-                            <a href="/projects/deactivate/{{ $project->id }}" class="btn btn-danger btn-xs">Deactivate</a>
-                            @endif
+                                            <a href="/projects/deactivate/{{ $project->id }}" class="btn btn-outline btn-danger btn-xs">Deactivate</a>
+                                            @endif
 
-                            @if($project->inactive == true)
-                            <a href="/projects/activate/{{ $project->id }}" class="btn btn-success btn-xs">Activate</a>
-                            @endif
-                            @endif
-
+                                            @if($project->inactive == true)
+                                            <a href="/projects/activate/{{ $project->id }}" class="btn btn-outline btn-success btn-xs">Activate</a>
+                                            @endif
+                                        @endif
+                                        @if(Auth::check() && Auth::user()->role == 'Super Administrator')
+                                        <br/><a href="/projects/activate/{{ $project->id }}" class="btn btn-danger btn-xs">Delete</a>
+                                            
+                                        @endif
                             @if(Auth::check() && Auth::user()->role == 'Test Participant' &&$project->is_valid_for_testing)
                             <a href="/projects/test/{{ $project->id }}/0" target="_blank" class="btn btn-primary btn-xs">Start Testing</a>
                             @endif
