@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Laravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Carbon\Carbon;
 
-use App\User;
-use App\Template;
-use App\TemplateComponent;
+use Laravel\User;
+use Laravel\Template;
+use Laravel\TemplateComponent;
 
 class TemplateController extends Controller
 {

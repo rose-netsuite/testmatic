@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Laravel;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -54,15 +54,15 @@ class User extends Authenticatable
 
     public function projects()
     {
-        return $this->belongsToMany('App\Project');
+        return $this->belongsToMany('Laravel\Project');
     }
 
     public function roles(){
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('Laravel\Role');
     }
 
     public function results(){
-        return $this->hasMany('App\ProjectResult');
+        return $this->hasMany('Laravel\ProjectResult');
     }
 
     public function assignRole($role){

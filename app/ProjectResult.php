@@ -1,16 +1,18 @@
 <?php
 
-namespace App;
+
+namespace Laravel;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectResult extends Model
+class ProjectResultController extends Model
 {
 	public function components(){
-		return $this->belongsTo('App\ProjectComponent');
+		return $this->belongsTo('Laravel\ProjectComponent');
 	}
 
 	public function users(){
-		return $this->belongsTo('App\User');
-	} 
+		return $this->belongsTo('Laravel\User');
+	}
+        
 }

@@ -4,6 +4,11 @@
 	@if(isset($success_message) || Session::has('message'))
       @include('layouts.success')
     @endif
+    <script>
+    $(".delete").on("submit", function(){
+        return confirm("Do you want to delete this project?");
+    });
+    </script>
     <div class="ibox float-e-margins">
         <div class="ibox-title">
             <h5>All Projects</h5>
@@ -82,7 +87,7 @@
                                             @endif
                                         @endif
                                         @if(Auth::check() && Auth::user()->role == 'Super Administrator')
-                                        <br/><a href="/projects/activate/{{ $project->id }}" class="btn btn-danger btn-xs">Delete</a>
+                                        <br/><a href="/projects/delete/{{ $project->id }}" onclick="return confirm('Are you sure you want to delete this project?')" class="btn btn-danger btn-xs">Delete</a>
                                             
                                         @endif
                             @if(Auth::check() && Auth::user()->role == 'Test Participant' &&$project->is_valid_for_testing)

@@ -2,23 +2,11 @@
 
 namespace Laravel\Http\Controllers;
 
+use Laravel\ProjectResult;
 use Illuminate\Http\Request;
-use Auth;
-use Redirect;
 
-class DashboardController extends Controller
+class ProjectResultController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        //
     }
 
     /**
@@ -53,10 +41,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \Laravel\ProjectResult  $projectResult
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ProjectResult $projectResult)
     {
         //
     }
@@ -64,10 +52,10 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \Laravel\ProjectResult  $projectResult
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProjectResult $projectResult)
     {
         //
     }
@@ -76,10 +64,10 @@ class DashboardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Laravel\ProjectResult  $projectResult
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ProjectResult $projectResult)
     {
         //
     }
@@ -87,24 +75,11 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \Laravel\ProjectResult  $projectResult
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ProjectResult $projectResult)
     {
         //
-    }
-
-    /**
-     * Logout current user from the application.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function logout()
-    {
-        Auth::logout(); // log the user out of our application
-
-        return Redirect::to('login'); // redirect the user to the login screen
     }
 }

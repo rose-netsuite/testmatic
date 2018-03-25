@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Laravel\Http\Controllers;
 
 use Response;
 use Illuminate\Http\Request;
@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Carbon\Carbon;
 
-use App\Role;
-use App\User;
-use App\SecurityQuestion;
-use App\Mailers\AppMailer;
+use Laravel\Role;
+use Laravel\User;
+use Laravel\SecurityQuestion;
+use Laravel\Mailers\AppMailer;
 
 class UserController extends Controller
 {

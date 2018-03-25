@@ -36,8 +36,8 @@
                             @if($project->inactive == true)
                             <a href="/projects/activate/{{ $project->id }}" class="btn btn-success btn-xs">Activate</a>
                             @endif
-                            @endif
-
+@endif
+                            
                             @if(Auth::check() && Auth::user()->role == 'Test Participant' &&$project->is_valid_for_testing)
                             <a href="/projects/test/{{ $project->id }}/0" target="_blank" class="btn btn-primary btn-xs">Start Testing</a>
                             @endif

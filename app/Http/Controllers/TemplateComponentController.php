@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Laravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
-use App\User;
-use App\TemplateComponent;
+use Laravel\User;
+use Laravel\TemplateComponent;
 
 
 class TemplateComponentController extends Controller
@@ -57,7 +57,7 @@ class TemplateComponentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\TemplateComponent  $templateComponent
+     * @param  \Laravel\TemplateComponent  $templateComponent
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,7 +78,7 @@ class TemplateComponentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TemplateComponent  $templateComponent
+     * @param  \Laravel\TemplateComponent  $templateComponent
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -92,7 +92,7 @@ class TemplateComponentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TemplateComponent  $templateComponent
+     * @param  \Laravel\TemplateComponent  $templateComponent
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -138,7 +138,7 @@ class TemplateComponentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TemplateComponent  $templateComponent
+     * @param  \Laravel\TemplateComponent  $templateComponent
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

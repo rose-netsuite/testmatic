@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Laravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
-use App\User;
-use App\ProjectComponent;
+use Laravel\User;
+use Laravel\ProjectComponent;
 
 class ProjectComponentController extends Controller
 {
@@ -56,7 +56,7 @@ class ProjectComponentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ProjectComponent  $projectComponent
+     * @param  \Laravel\ProjectComponent  $projectComponent
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -77,7 +77,7 @@ class ProjectComponentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ProjectComponent  $projectComponent
+     * @param  \Laravel\ProjectComponent  $projectComponent
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -91,7 +91,7 @@ class ProjectComponentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ProjectComponent  $projectComponent
+     * @param  \Laravel\ProjectComponent  $projectComponent
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -137,7 +137,7 @@ class ProjectComponentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ProjectComponent  $projectComponent
+     * @param  \Laravel\ProjectComponent  $projectComponent
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

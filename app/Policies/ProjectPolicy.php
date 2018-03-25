@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Policies;
+namespace Laravel\Policies;
 
-use App\User;
-use App\Project;
+use Laravel\User;
+use Laravel\Project;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ProjectPolicy

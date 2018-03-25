@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Mailers;
+namespace Laravel\Mailers;
 
 use Illuminate\Contracts\Mail\Mailer;
 
-use App\User;
-use App\Project;
+use Laravel\User;
+use Laravel\Project;
 
 class AppMailer{
 

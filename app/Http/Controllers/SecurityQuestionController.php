@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Laravel\Http\Controllers;
 
-use App\SecurityQuestion;
+use Laravel\SecurityQuestion;
 use Illuminate\Http\Request;
 
 class SecurityQuestionController extends Controller
@@ -41,7 +41,7 @@ class SecurityQuestionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SecurityQuestion  $securityQuestion
+     * @param  \Laravel\SecurityQuestion  $securityQuestion
      * @return \Illuminate\Http\Response
      */
     public function show(SecurityQuestion $securityQuestion)
@@ -52,7 +52,7 @@ class SecurityQuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SecurityQuestion  $securityQuestion
+     * @param  \Laravel\SecurityQuestion  $securityQuestion
      * @return \Illuminate\Http\Response
      */
     public function edit(SecurityQuestion $securityQuestion)
@@ -64,7 +64,7 @@ class SecurityQuestionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SecurityQuestion  $securityQuestion
+     * @param  \Laravel\SecurityQuestion  $securityQuestion
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SecurityQuestion $securityQuestion)
@@ -75,7 +75,7 @@ class SecurityQuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SecurityQuestion  $securityQuestion
+     * @param  \Laravel\SecurityQuestion  $securityQuestion
      * @return \Illuminate\Http\Response
      */
     public function destroy(SecurityQuestion $securityQuestion)

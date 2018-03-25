@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Laravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
-use App\User;
-use App\SecurityQuestion;
-use App\Project;
-use App\ProjectComponent;
-use App\ProjectUser;
-use App\Template;
+use Laravel\User;
+use Laravel\SecurityQuestion;
+use Laravel\Project;
+use Laravel\ProjectComponent;
+use Laravel\ProjectUser;
+use Laravel\Template;
 
-use App\Mailers\AppMailer;
+use Laravel\Mailers\AppMailer;
 
 class ProjectController extends Controller
 {
@@ -321,6 +321,10 @@ class ProjectController extends Controller
         return redirect()->back();
     }
 
+    public function photos()
+    {
+        return $this->has_many('project_components');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -329,7 +333,23 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $component = Project::find($id);
+        //Delete Project Components
+        $project_components  = ProjectComponent::where('project_id',$id)
+               ->delete();
+        
+        //Delete Project Users
+        $project_user  = ProjectUser::where('project_id',$id)
+               ->delete();
+        
+        //Delete Project Result
+       // $project_results  = ProjectResult::where('project_id',$id)
+         //      ->delete();
+        
+        $component->delete();
+        session()->flash('message', 'Project deleted!');
+        
+        return redirect()->back();
     }
 
     /**

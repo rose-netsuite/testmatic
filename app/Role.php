@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Laravel;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,7 +8,7 @@ class Role extends Model
 {
    /** public function permissions(){
 
-    	returns $this->belongToMany('App\Permission');
+    	returns $this->belongToMany('Laravel\Permission');
     }
 
     public function givePermissionTo(Permission $permission){
@@ -18,6 +18,6 @@ class Role extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('Laravel\User');
     }
 }

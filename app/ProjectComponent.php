@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Laravel;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,6 @@ class ProjectComponent extends Model
     public $modified_full_name = '';
 
     public function results(){
-        return $this->hasMany('App\ProjectResult');
+        return $this->hasMany('Laravel\ProjectResult');
     }
 }
