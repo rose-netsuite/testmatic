@@ -126,16 +126,29 @@
         var extensionId = "kegdbcgopmmfabicalpcohlknnabcfgd";
         var yourMessage = 'capture';
 
-        function startTimer() {
-          var presentTime = document.getElementById('timer').innerHTML;
+        function startTimer(bStart) {
+          var presentTime = document.getElementById('hiddenTimer').value;
           var timeArray = presentTime.split(/[:]+/);
           var m = timeArray[0];
-          var s = checkSecond((timeArray[1] - 1));
-          if(s==59){m=m-1}
-          //if(m<0){alert('timer completed')}
-
-          document.getElementById('timer').innerHTML =
-            m + ":" + s;
+          var s = 0;
+          if(bStart)
+            s = checkSecond((timeArray[1]));
+        else
+            s = checkSecond((timeArray[1] - 1));
+            
+          if((m == 0 && s == 0) || (m < 0)){
+              
+              document.getElementById('timer').innerHTML = "00:00";
+          }else{
+              document.getElementById('timer').innerHTML = m + ":" + s;
+          }
+            if(s==0){
+              m=m-1;
+          }
+              document.getElementById("hiddenTimer").value = m + ":" + s;
+              document.getElementById("hiddenTimer").text = m + ":" + s;
+          
+          
           setTimeout(startTimer, 1000);
         }
         function screenshot(){
@@ -155,6 +168,7 @@
                     
         }
         function checkSecond(sec) {
+            
             if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
             if (sec < 0) {sec = "59"};
             return sec;
@@ -163,8 +177,7 @@
         $(document).ready(function(){
 
             var isMarkedComplete = false;
-            $('.timer').html( 03 + ":" + 00);
-            startTimer();
+            startTimer(true);
             $('#mark_complete').on('click', function(){
 
                 screenshot();

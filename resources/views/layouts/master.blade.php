@@ -235,6 +235,18 @@ Angular Dependiences
             },
             onStepChanged: function (event, currentIndex, priorIndex)
             {
+                 if(currentIndex  == 2 || currentIndex=="2"){
+                    
+                    document.getElementById('lbl_firstname').innerHTML = document.getElementById('first_name').value;
+                    document.getElementById('lbl_middlename').innerHTML = document.getElementById('middle_name').value;
+                    document.getElementById('lbl_lastname').innerHTML = document.getElementById('last_name').value;
+                    document.getElementById('lbl_bday').innerHTML = document.getElementById('birthdate').value;
+                    document.getElementById('lbl_gender').innerHTML = document.getElementById('gender').value;
+                    document.getElementById('lbl_contact').innerHTML = document.getElementById('contact_num').value;
+                    document.getElementById('lbl_email').innerHTML = document.getElementById('email').value;
+                    document.getElementById('lbl_username').innerHTML = document.getElementById('username').value;
+                    document.getElementById('lbl_role').innerHTML = document.getElementById('role').value;
+                }
                 // Suppress (skip) "Warning" step if the user is old enough.
                 if (currentIndex === 2 && Number($("#age").val()) >= 18)
                 {
@@ -247,6 +259,7 @@ Angular Dependiences
                     $(this).steps("previous");
                 }
                 
+               
                 if(currentIndex == 2){
 
                     console.log($(this).attr('id').indexOf('template') != -1);
@@ -261,7 +274,7 @@ Angular Dependiences
                 // Disable validation on fields that are disabled.
                 // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
                 form.validate().settings.ignore = ":disabled";
-
+                
                 // Start validation; Prevent form submission if false
                 return form.valid();
             },

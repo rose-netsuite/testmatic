@@ -10,7 +10,8 @@
     	<div class="footer-desc" style="text-align: center;">
 	        <div class="running-time-div">Running Time:
             <br/>
-             <span id="timer">{{ $project_component->time_limit }}</span>
+             <span id="timer">{{ $project_component->time_limit }}</span><br/>
+               <input type="hidden" name="hiddenTimer" id="hiddenTimer" value={{ $project_component->time_limit }} />
             </div>
         </div>
     </div>
